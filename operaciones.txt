@@ -1,0 +1,32 @@
+obtener todas las peliculas
+GET http://localhost:3005/api/movies/
+
+obtener una pelicula por id
+GET http://localhost:3005/api/movies/1
+
+obtener una pelicula por nombre
+GET http://localhost:3005/api/movies/name/Inception
+
+agregar una nueva pelicula
+POST http://localhost:3005/api/movies/ \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "Interstellar",
+  "director": "Christopher Nolan",
+  "genre": "Sci-Fi",
+  "score": 8.6,
+  "rating": "PG-13",
+  "year": 2014
+}'
+
+actualizar una pelicula
+PUT http://localhost:3005/api/movies/1 \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "Interstellar",
+  "score": 9.0,
+  "rating": "R"
+}'
+
+borrar una pelicula
+DELETE http://localhost:3005/api/movies/1
